@@ -1,0 +1,84 @@
+---
+import { MoveRight } from '@lucide/astro'
+
+const workItems = [
+  {
+    year: '2025',
+    role: 'Co-Founder',
+    company: 'Caselib',
+    description: 'Digital case management solution for lawyers',
+    tech: ['React', 'Typescript', 'NestJS', 'PostgreSQL'],
+    url: 'https://caselib.ro',
+  },
+  {
+    year: '2025',
+    role: 'Founder',
+    company: 'LightningAddon',
+    description:
+      'Chrome Extension boilerplate with all you need to build your SaaS',
+    tech: ['React', 'Chrome Extensions'],
+    url: 'https://lightingaddon.com',
+  },
+  {
+    year: '2024',
+    role: 'Founder',
+    company: 'SiteBlocker',
+    description:
+      'Schedule restrictions, blocklists and take control of your browsing habits ',
+    tech: ['React', 'Typescript', 'Node.js', 'PostgreSQL'],
+    url: 'https://siteblocker.app',
+  },
+]
+---
+
+<section id='work' class='min-h-screen py-20 sm:py-32 opacity-0'>
+  <div class='space-y-12 sm:space-y-16'>
+    <div
+      class='flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4'
+    >
+      <h2 class='text-3xl sm:text-4xl font-light'>Working On</h2>
+      <div class='text-sm text-muted-foreground font-mono'>currently</div>
+    </div>
+
+    <div class='space-y-8 sm:space-y-12'>
+      {
+        workItems.map((job) => (
+          <div class='group grid lg:grid-cols-12 gap-4 sm:gap-8 py-6 sm:py-8 border-b border-border/50 hover:border-border transition-colors duration-500'>
+            <div class='lg:col-span-2'>
+              <div class='text-xl sm:text-2xl font-light text-muted-foreground group-hover:text-foreground transition-colors duration-500'>
+                {job.year}
+              </div>
+            </div>
+
+            <div class='lg:col-span-6 space-y-3'>
+              <div>
+                <h3 class='text-lg sm:text-xl font-medium'>{job.role}</h3>
+                <div class='text-muted-foreground'>{job.company}</div>
+              </div>
+              <p class='text-muted-foreground leading-relaxed max-w-lg'>
+                {job.description}
+              </p>
+
+              <div class='flex items-center gap-2 text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300'>
+                <a
+                  href={job.url}
+                  class='flex items-center gap-2 hover:underline'>
+                  <span>Link</span>
+                  <MoveRight class='w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300' />
+                </a>
+              </div>
+            </div>
+
+            <div class='lg:col-span-4 flex flex-wrap gap-2 lg:justify-end mt-2 lg:mt-0'>
+              {job.tech.map((tech) => (
+                <span class='px-2 py-1 text-xs text-muted-foreground rounded group-hover:border-muted-foreground/50 transition-colors duration-500'>
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

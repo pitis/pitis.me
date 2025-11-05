@@ -3,4 +3,4 @@ User-agent: *
 Disallow:
 
 # Sitemap location
-Sitemap: https://pitis.me/sitemap.xml
+Sitemap: https://pitis.me/sitemap-index.xml

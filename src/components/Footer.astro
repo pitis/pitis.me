@@ -1,0 +1,38 @@
+---
+import { Sun } from '@lucide/astro'
+---
+
+<footer class='py-12 sm:py-16 border-t border-border'>
+  <div
+    class='flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 sm:gap-8'
+  >
+    <div class='space-y-2'>
+      <div class='text-sm text-muted-foreground'>
+        © 2025 Pitiș Radu. All rights reserved.
+      </div>
+      <!-- <div class='text-xs text-muted-foreground'>
+        Built with Astro + Tailwind
+      </div> -->
+    </div>
+
+    <div class='flex items-center gap-4'>
+      <button
+        id='theme-toggle'
+        class='group p-3 rounded-lg border border-border hover:border-muted-foreground/50 transition-all duration-300'
+        aria-label='Toggle theme'
+      >
+        <Sun
+          class='w-4 h-4 text-muted-foreground group-hover:text-foreground transition-colors duration-300'
+        />
+      </button>
+    </div>
+  </div>
+
+  <script>
+    const btn = document.getElementById('theme-toggle')
+    const html = document.documentElement
+    btn?.addEventListener('click', () => {
+      html.classList.toggle('dark')
+    })
+  </script>
+</footer>

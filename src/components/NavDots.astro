@@ -1,0 +1,57 @@
+---
+const sections = ['intro', 'work', 'thoughts', 'connect']
+---
+
+<nav class='fixed left-8 top-1/2 -translate-y-1/2 z-10 hidden lg:block'>
+  <div class='flex flex-col gap-4'>
+    {
+      sections.map((section) => (
+        <button
+          data-section={section}
+          class='nav-dot w-2 h-8 rounded-full transition-all duration-500 bg-muted-foreground/30 hover:bg-muted-foreground/60'
+          aria-label={`Navigate to ${section}`}
+        />
+      ))
+    }
+  </div>
+</nav>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll('header[id], section[id]')
+    const dots = document.querySelectorAll('.nav-dot')
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const id = entry.target.id
+          if (entry.isIntersecting) {
+            // Add fade-in animation once
+            entry.target.classList.add('animate-fade-in-up')
+            // Highlight nav dot
+            dots.forEach((dot) => {
+              if (dot.dataset.section === id) {
+                dot.classList.remove('bg-muted-foreground/30')
+                dot.classList.add('bg-muted-foreground')
+              } else {
+                dot.classList.remove('bg-muted-foreground')
+                dot.classList.add('bg-muted-foreground/30')
+              }
+            })
+          }
+        })
+      },
+      { threshold: 0.3, rootMargin: '0px 0px -20% 0px' }
+    )
+
+    sections.forEach((section) => observer.observe(section))
+
+    // Scroll to section on dot click
+    dots.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const id = btn.dataset.section
+        document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+      })
+    })
+  })
+</script>

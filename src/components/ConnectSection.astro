@@ -1,0 +1,69 @@
+---
+import { MoveRight } from '@lucide/astro'
+
+const socials = [
+  {
+    name: 'GitHub',
+    handle: '@pitis',
+    url: 'https://github.com/pitis',
+  },
+  {
+    name: 'LinkedIn',
+    handle: '@pitisradu',
+    url: 'https://www.linkedin.com/in/pitisradu/',
+  },
+  {
+    name: 'Medium',
+    handle: '@pitis.radu',
+    url: 'https://medium.com/@pitis.radu',
+  },
+]
+---
+
+<section id='connect' class='py-20 sm:py-32 opacity-0'>
+  <div class='grid lg:grid-cols-2 gap-12 sm:gap-16'>
+    <div class='space-y-6 sm:space-y-8'>
+      <h2 class='text-3xl sm:text-4xl font-light'>Let's Connect</h2>
+
+      <div class='space-y-6'>
+        <p class='text-lg sm:text-xl text-muted-foreground leading-relaxed'>
+          Always interested in new opportunities, collaborations, and
+          conversations about technology and design.
+        </p>
+
+        <div class='space-y-4'>
+          <a
+            href='https://linktr.ee/pitis'
+            class='group flex items-center gap-3 text-foreground hover:text-muted-foreground transition-colors duration-300'
+          >
+            <span class='text-base sm:text-lg'>linktree</span>
+            <MoveRight
+              class='w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300'
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class='space-y-6 sm:space-y-8'>
+      <div class='text-sm text-muted-foreground font-mono'>ELSEWHERE</div>
+
+      <div class='grid grid-cols-1 sm:grid-cols-2 gap-4'>
+        {
+          socials.map((social) => (
+            <a
+              href={social.url}
+              class='group p-4 border border-border rounded-lg hover:border-muted-foreground/50 transition-all duration-300 hover:shadow-sm'>
+              <div class='space-y-2'>
+                <div class='text-foreground group-hover:text-muted-foreground transition-colors duration-300'>
+                  {social.name}
+                </div>
+                <div class='text-sm text-muted-foreground'>{social.handle}</div>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
