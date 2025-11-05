@@ -1,5 +1,10 @@
 ---
 import '../styles/global.css'
+
+const {
+  title = "Hi, I'm Pitiș | Software Engineer & SaaS Founder",
+  description = 'Explore the journey of Radu Pitis, a software engineer and founder of three SaaS companies.',
+} = Astro.props
 ---
 
 <!doctype html>
@@ -7,9 +12,45 @@ import '../styles/global.css'
   <head>
     <meta charset='UTF-8' />
     <meta name='viewport' content='width=device-width' />
-    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
     <meta name='generator' content={Astro.generator} />
-    <title>Astro Basics</title>
+    <link rel='icon' href='/picture.jpeg' type='image/jpeg' />
+    <!-- <link rel='preload' as='image' href='/picture.jpeg' fetchpriority='high' /> -->
+    <title>{title}</title>
+
+    <!-- Basic Meta -->
+    <meta name='description' content={description} />
+    <meta
+      name='keywords'
+      content='Software Engineer, SaaS Founder, Startup Growth, Product Development, Cloud Computing'
+    />
+    <meta name='robots' content='index, follow' />
+    <meta name='author' content='Radu Pitis' />
+    <link rel='canonical' href='https://pitis.me' />
+
+    <!-- Open Graph -->
+    <meta
+      property='og:title'
+      content="Hi, I'm Pitiș - Software Engineer & SaaS Founder"
+    />
+    <meta
+      property='og:description'
+      content='Discover the journey of a software engineer and SaaS founder. Learn about my projects, expertise, and insights on SaaS development.'
+    />
+    <!-- <meta property="og:image" content="https://pitis.me/og-image.jpg" /> -->
+    <meta property='og:url' content='https://pitis.me' />
+    <meta property='og:type' content='website' />
+
+    <!-- Twitter Card -->
+    <meta name='twitter:card' content='summary_large_image' />
+    <meta
+      name='twitter:title'
+      content="Hi, I'm Pitiș - Software Engineer & SaaS Founder"
+    />
+    <meta
+      name='twitter:description'
+      content='Explore my journey as a software engineer and SaaS founder. Insights on SaaS development and tech entrepreneurship.'
+    />
+    <!-- <meta name="twitter:image" content="https://pitis.me/twitter-image.jpg" /> -->
   </head>
   <body class='bg-background text-foreground'>
     <slot />
