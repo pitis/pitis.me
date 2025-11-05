@@ -12,6 +12,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="preload" as="image" href="/picture.jpeg" fetchpriority="high" />
 
     <meta
       name="description"
@@ -113,7 +114,14 @@
         <h1>Hi, I'm Pitiș 👋</h1>
         <span>Coder by day, entrepreneur by night.</span>
         <div class="image-hero">
-          <img src="/picture.jpeg" alt="Pitis Radu" />
+          <img
+            src="/picture.jpeg"
+            alt="Pitis Radu"
+            width="300"
+            height="300"
+            fetchpriority="high"
+            decoding="async"
+          />
           <div class="image-hero-links">
             <a target="_blank" href="https://www.linkedin.com/in/pitisradu"
               >🤝🏼 Connect on LinkedIn</a
@@ -135,21 +143,30 @@
       <section>
         <h2>Currently 🛠️</h2>
         <div class="description">
-          🛠️ founder @ <a href="https://siteblocker.app">SiteBlocker</a>, create
-          blocklists, schedule restrictions, and take control of your browsing
-          habits
+          🛠️ co-founder @ <a href="https://caselib.ro">Caselib</a>, digital case
+          management solution for lawyers
         </div>
+        <!-- <div class="description">
+          🛠️ founder @
+          <a href="https://menubear.ro">MenuBear</a>, Chrome Extension
+          boilerplate with all you need to build your SaaS
+        </div> -->
         <div class="description">
           🛠️ founder @
           <a href="https://www.lightningaddon.com">LightningAddon</a>, Chrome
           Extension boilerplate with all you need to build your SaaS
         </div>
         <div class="description">
+          🛠️ founder @ <a href="https://siteblocker.app">SiteBlocker</a>,
+          schedule restrictions, blocklists and take control of your browsing
+          habits
+        </div>
+        <div class="description">
           ✍️ writings on <a href="https://medium.com/@pitis.radu">Medium</a>.
           mostly on coding, open source, startups, career advice.
         </div>
         <div class="description">🌱 open-source contributor</div>
-        <div class="description">⚡️ fun fact: I owned a 🦔 called Lisa</div>
+        <div class="description">⚡️ fun fact: I am a big fan of 🦔s</div>
       </section>
 
       <!-- <section>
