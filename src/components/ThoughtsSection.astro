@@ -59,8 +59,9 @@ const posts = [
               <div class='flex items-center gap-2 text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300'>
                 <a
                   href={post.url}
+                  aria-label={`Read article: ${post.title}`}
                   class='flex items-center gap-2 hover:underline'>
-                  <span>Read more</span>
+                  <span>Read article</span>
                   <MoveRight class='w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300' />
                 </a>
               </div>
