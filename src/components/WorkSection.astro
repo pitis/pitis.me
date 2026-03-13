@@ -1,34 +1,6 @@
 ---
 import { MoveRight } from '@lucide/astro'
-
-const workItems = [
-  {
-    year: '2025',
-    role: 'Co-Founder',
-    company: 'Caselib',
-    description: 'Digital case management solution for lawyers',
-    tech: ['React', 'Typescript', 'NestJS', 'FastAPI', 'PostgreSQL'],
-    url: 'https://caselib.ro',
-  },
-  {
-    year: '2025',
-    role: 'Founder',
-    company: 'LightningAddon',
-    description:
-      'Ship production-ready browser extensions in days. Auth, billing, and 6-browser support built-in.',
-    tech: ['React', 'Chrome Extensions', 'Supabase', "Firebase"],
-    url: 'https://www.lightningaddon.com',
-  },
-  {
-    year: '2024',
-    role: 'Founder',
-    company: 'SiteBlocker',
-    description:
-      'Schedule restrictions, blocklists and take control of your browsing habits ',
-    tech: ['React', 'Typescript', 'Node.js', 'PostgreSQL'],
-    url: 'https://siteblocker.app',
-  },
-]
+import { workItems } from '../data/work'
 ---
 
 <section id='work' class='min-h-screen py-20 opacity-0'>
@@ -58,13 +30,19 @@ const workItems = [
                 {job.description}
               </p>
 
-              <div class='flex items-center gap-2 text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300'>
+              <div class='flex items-center gap-4 text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300'>
+                <a
+                  href={`/work/${job.slug}`}
+                  class='flex items-center gap-2 hover:underline'>
+                  <span>View project</span>
+                  <MoveRight class='w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300' />
+                </a>
                 <a
                   target='_blank'
+                  rel='noopener noreferrer'
                   href={job.url}
-                  class='flex items-center gap-2 hover:underline'>
-                  <span>Link</span>
-                  <MoveRight class='w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300' />
+                  class='hover:underline'>
+                  Visit site →
                 </a>
               </div>
             </div>
